@@ -17,9 +17,9 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideKeycloak({
       config: {
-        url: environment.kc_url,
-        realm: environment.kc_realm,
-        clientId: environment.kc_clientId,
+        url: environment.KEYCLOAK_URL,
+        realm: environment.KEYCLOAK_REALM,
+        clientId: environment.KEYCLOAK_CLIENT_ID,
       },
       initOptions: {
         onLoad: 'login-required',

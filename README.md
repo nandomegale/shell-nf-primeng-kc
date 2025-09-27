@@ -1,59 +1,43 @@
-# PortalPrivadoShell
+A host Angular 20 app using Native Federation to load remote features. It also handles Keycloak auth (keycloak-js + keycloak-angular). UI components are built with PrimeNG.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.3.
+## Prerequisites
 
-## Development server
+- Node.js 20+
+- npm (or pnpm/yarn/bun)
+- Angular CLI 20+ (npm i -g @angular/cli)
 
-To start a local development server, run:
+## Setup
 
-```bash
+git clone git@github.com:nandomegale/shell-nf-primeng-kc.git
+cd shell-nf-primeng-kc
+npm install
+
+## (Optional) Keycloak config - If you don't want use KC, just comment the provider in app.config.ts and skip this step.
+
+ng g environments
+
+//environments/environment.ts
+KEYCLOAK_URL=https://<your-keycloak-url>
+KEYCLOAK_REALM=<realm>
+KEYCLOAK_CLIENT_ID=<client-id>
+
+## Run (dev)
+
+Start the remote first (see link below), then the shell.
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+# default: http://localhost:4200
 
-## Code scaffolding
+## Federation notes
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- This app consumes remotes exposed by remote-nf-primeng-kc.
+- Ensure the remote is running (e.g., http://localhost:4201).
 
-```bash
-ng generate component component-name
-```
+## Important considerations
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- The shell is fully responsible for Keycloak management.
+- The remote app will reuse interceptors provided by the shell.
+- If you need the remote app itself to manage Keycloak, you must design a different approach.
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Remote app: remote-nf-primeng-kc → [\[LINK TO REMOTE REPO\]](https://github.com/nandomegale/remote-nf-primeng-kc)
