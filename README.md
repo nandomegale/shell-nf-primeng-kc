@@ -16,10 +16,10 @@ npm install
 
 ng g environments
 
-//environments/environment.ts
-KEYCLOAK_URL=https://<your-keycloak-url>
-KEYCLOAK_REALM=<realm>
-KEYCLOAK_CLIENT_ID=<client-id>
+//environments/environment.ts <br/>
+KEYCLOAK_URL=https://your-keycloak-url <br/>
+KEYCLOAK_REALM=your-realm <br/>
+KEYCLOAK_CLIENT_ID=your-client-id <br/>
 
 ## Run (dev)
 
