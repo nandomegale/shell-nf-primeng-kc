@@ -8,9 +8,9 @@ A host Angular 20 app using Native Federation to load remote features. It also h
 
 ## Setup
 
-git clone git@github.com:nandomegale/shell-nf-primeng-kc.git
-cd shell-nf-primeng-kc
-npm install
+- git clone git@github.com:nandomegale/shell-nf-primeng-kc.git
+- cd shell-nf-primeng-kc
+- npm install
 
 ## (Optional) Keycloak config - If you don't want use KC, just comment the provider in app.config.ts and skip this step.
 
